@@ -1,0 +1,42 @@
+'.text.html.php':
+    'Licencia':
+      'prefix': 'com'
+      'body': """
+        /**
+         * @author $1
+         * @copyright Copyright (c) $2 $1
+         * @license https://www.gnu.org/licenses/gpl.txt
+         */
+        """
+    'var_dump()+die()':
+        'prefix': 'vdie'
+        'body': 'var_dump($1);die();'
+
+    '<?= $1 ?>':
+        'prefix': 'pe'
+        'body': '<?= $1 ?>'
+
+    'AjaxYii':
+        'prefix': 'ajax'
+        'body': """
+        $url = Url::to(['$1']);
+        $js = <<<EOF
+        $('$2').change(function(e){
+            e.preventDefault();
+
+            $.ajax({
+                method: 'GET',
+                url: '$url',
+                data: {
+                    $3
+                    },
+                success: function(result){
+
+                }
+            });
+        });
+        EOF;
+
+        $this->registerJs($js);
+        ?>
+        """
