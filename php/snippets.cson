@@ -1,0 +1,17 @@
+'.text.html.php':
+    'Licencia':
+      'prefix': 'com'
+      'body': """
+        /**
+         * @author $1
+         * @copyright Copyright (c) $2 $1
+         * @license https://www.gnu.org/licenses/gpl.txt
+         */
+        """
+    'var_dump()+die()':
+        'prefix': 'vdie'
+        'body': 'var_dump($1);die();'
+
+    '<?= $1 ?>':
+        'prefix': 'pe'
+        'body': '<?= $1 ?>'
